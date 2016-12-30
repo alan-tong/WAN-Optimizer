@@ -30,6 +30,22 @@ def main():
         'tests.test_route_poisoning',
         extra_args=['--poison-mode'])
 
+    t.test('learning_switch', 'tests.learning_disconnect')
+    t.test('learning_switch', 'tests.super_learning')
+    t.test('learning_switch', 'tests.test_learning_complex')
+    t.test('dv_router', 'tests.diamond_top_2',
+        extra_args=['--poison-mode'])
+    t.test('dv_router', 'tests.diamond_top',
+        extra_args=['--poison-mode'])
+    t.test('dv_router', 'tests.host_many_routers',
+        extra_args=['--poison-mode'])
+    t.test('dv_router', 'tests.test_basics_intensely',
+        extra_args=['--poison-mode'])
+    t.test('dv_router', 'tests.test_fun',
+        extra_args=['--poison-mode'])
+    t.test('dv_router', 'tests.test_link_weights_multi_router_host',
+        extra_args=['--poison-mode'])
+
     # Add your own tests here.
 
     t.finish()

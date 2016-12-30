@@ -17,12 +17,12 @@ class SimpleTest():
 
     def setup(self, port, host="localhost"):
         """Sets up a server and four clients."""
-        self.server = Popen(["python", "server.py", str(port)])
+        self.server = Popen(["python2", "server.py", str(port)])
         # Give the server time to come up.
         time.sleep(SLEEP_SECONDS)
 
-        self.alice_client = Popen(["python", "client.py", "Alice", host, str(port)], stdin=PIPE, stdout=PIPE)
-        self.kay_client = Popen(["python", "client.py", "Kay", host, str(port)], stdin=PIPE, stdout=PIPE)
+        self.alice_client = Popen(["python2", "client.py", "Alice", host, str(port)], stdin=PIPE, stdout=PIPE)
+        self.kay_client = Popen(["python2", "client.py", "Kay", host, str(port)], stdin=PIPE, stdout=PIPE)
         time.sleep(SLEEP_SECONDS)
 
     def tear_down(self):
